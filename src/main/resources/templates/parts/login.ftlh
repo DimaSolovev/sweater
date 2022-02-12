@@ -13,6 +13,7 @@
                 </#if>
             </div>
         </div>
+
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Password:</label>
             <div class="col-sm-6">
@@ -26,6 +27,7 @@
                 </#if>
             </div>
         </div>
+
         <#if isRegisterForm>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Password:</label>
@@ -40,6 +42,7 @@
                     </#if>
                 </div>
             </div>
+
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Email:</label>
                 <div class="col-sm-6">
@@ -53,6 +56,16 @@
                     </#if>
                 </div>
             </div>
+
+            <div class="col-sm-6">
+                <div class="g-recaptcha" data-sitekey="6Lcqa3MeAAAAAE6Llyi1SV8BWBA_ZTB3nNQtE_Ew"></div>
+                <#if captchaError??>
+                    <div class="alert alert-danger" role="alert">
+                        ${captchaError}
+                    </div>
+                </#if>
+            </div>
+
         </#if>
         <input type="hidden" name="_csrf" value="${_csrf.token}" />
         <#if !isRegisterForm><a href="/registration">Add new user</a></#if>
