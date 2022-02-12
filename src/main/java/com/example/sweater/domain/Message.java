@@ -1,6 +1,10 @@
 package com.example.sweater.domain;
 
+import org.hibernate.validator.constraints.Length;
+import org.springframework.lang.NonNull;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class Message {
@@ -10,7 +14,10 @@ public class Message {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User author;
+    @NotBlank(message = "Please fill the message")
+    @Length(max = 2048,message = "Message to long")
     private String text;
+    @Length(max = 255,message = "Message to long")
     private String tag;
 
     private String filename;
