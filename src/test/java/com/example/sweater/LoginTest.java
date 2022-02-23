@@ -1,6 +1,6 @@
 package com.example.sweater;
 
-import com.example.sweater.controller.MainController;
+import com.example.sweater.controller.MessageController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.theInstance;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestBuilders.formLogin;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -29,7 +28,7 @@ public class LoginTest {
     private MockMvc mockMvc;
 
     @Autowired
-    private MainController controller;
+    private MessageController controller;
 
     @Test
     public void contextLoads() throws Exception {
